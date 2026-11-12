@@ -12,7 +12,7 @@
 const SUPABASE_URL='https://hwussryznzedbaebadpp.supabase.co';
 const SUPABASE_KEY='sb_publishable_ZMLeSEkOgXmYLyQsRhL2TA_Giy-Bq_q';
 // Endereço do site publicado (ex.: https://seusite.github.io/rifa-pro/). Usado nos links públicos.
-const PUBLIC_SITE_URL='https://raw.githack.com/sbdesignerdeepoca-crypto/rifa-pro/main/index.html';
+const PUBLIC_SITE_URL='https://sbdesignerdeepoca-crypto.github.io/rifa-pro/';
 const sb=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY);
 const $=s=>document.querySelector(s);let user=null,authMode='login',selected=new Set(),currentRaffle=null;
 function esc(v=''){return String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
