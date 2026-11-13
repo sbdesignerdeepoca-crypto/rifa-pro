@@ -1,0 +1,16 @@
+# Segredos — nunca enviar
+.env
+.env.*
+*.jks
+*.keystore
+keystore.properties
+google-services.json
+service-account*.json
+
+# Builds
+node_modules/
+android/app/build/
+android/.gradle/
+*.aab
+*.apk
+.DS_Store
