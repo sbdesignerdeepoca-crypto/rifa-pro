@@ -3,6 +3,8 @@
 Responda sempre em **português do Brasil**. O dono é o Samuel, que trabalha **pelo celular Android**.
 Explique em passos curtos e diretos, sem jargão. Quando ele precisar fazer algo, diga exatamente onde tocar.
 
+**Antes de começar, leia `MEMORIA.md`** (o que já aprendemos e as pendências) e atualize ao terminar.
+
 ## O que é este projeto
 **Rifa Pro**: app para criar e gerenciar rifas. Um arquivo só (`index.html`) com o painel do dono
 (login, campanhas, fotos do prêmio, reservas, marcar como pago) e a página pública da rifa
