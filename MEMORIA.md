@@ -45,3 +45,10 @@ chaves secretas, Pix, telefone ou e-mail pessoal aqui (o repositório rifa-pro �
       (para o link de "Esqueci minha senha" voltar para o app).
 - [ ] Ideias oferecidas para o Rifa Pro: barra de progresso, ranking de compradores, botão de
       compartilhar no WhatsApp, contagem regressiva, pacotes promocionais.
+
+## Prévia do novo Rifa Pro — 16/11/2026
+- Criada `previa.html`: demonstração interativa independente com campanha fictícia, seleção manual/aleatória, filtros e paginação, reserva de 15 minutos, painel com confirmação/cancelamento, edição do nome e exportação CSV.
+- Link: https://sbdesignerdeepoca-crypto.github.io/rifa-pro/previa.html
+- Não conecta ao Supabase, não gera cobranças e não altera as campanhas reais. Estado temporário em memória; atualizar reinicia a simulação.
+- Testados os cálculos e transições de reserva, pagamento, cancelamento e expiração; fluxo de reserva e confirmação também exercitado no navegador publicado.
+- Próximo passo: Samuel avaliar a prévia antes de aplicar o visual e integrar as funções ao banco real.
