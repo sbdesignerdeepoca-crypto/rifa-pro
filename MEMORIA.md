@@ -18,11 +18,8 @@ chaves secretas, Pix, telefone ou e-mail pessoal aqui (o repositório rifa-pro �
   - `rifa-pro` (público): app de rifas, publicado no GitHub Pages (ramo `main`, pasta raiz).
 - Configurações do GitHub (ligar Pages, permissões, apps) **só o Samuel consegue mudar**. Eu não tenho acesso.
 - Supabase do Rifa Pro: projeto `hwussryznzedbaebadpp`.
-  - O conector do Supabase aqui está ligado a **outra conta** (projetos "oraculo-de-ifa" e outro).
-    Para eu mexer no banco do Rifa Pro, ele precisa reconectar o Supabase com a conta certa em
-    claude.ai/customize/connectors e abrir uma conversa nova.
-  - O container da nuvem **não acessa** `*.supabase.co` nem sites `github.io`: não dá para testar
-    o site daqui; pedir print para ele.
+  - Em 16/11/2026, o conector disponível nesta conversa confirmou acesso ao projeto correto. Esquema, RLS, gatilho de pagamento e Edge Function de reserva foram conferidos em modo de leitura.
+  - A campanha pública foi testada no navegador com a integração real, sem criar reservas ou alterar dados.
 
 ## Lições (problemas que já resolvemos)
 - **Link público quebrado** quando o app é aberto como arquivo (Drive/`content://`): o link sai com
@@ -51,4 +48,12 @@ chaves secretas, Pix, telefone ou e-mail pessoal aqui (o repositório rifa-pro �
 - Link: https://sbdesignerdeepoca-crypto.github.io/rifa-pro/previa.html
 - Não conecta ao Supabase, não gera cobranças e não altera as campanhas reais. Estado temporário em memória; atualizar reinicia a simulação.
 - Testados os cálculos e transições de reserva, pagamento, cancelamento e expiração; fluxo de reserva e confirmação também exercitado no navegador publicado.
-- Próximo passo: Samuel avaliar a prévia antes de aplicar o visual e integrar as funções ao banco real.
+- Prévia aprovada pelo Samuel; ele autorizou aplicar o visual à versão definitiva.
+
+## Versão definitiva — 16/11/2026
+- `index.html` recebeu o visual aprovado e continua conectado ao Supabase real: login/cadastro/recuperação, painel exclusivo do proprietário, totais financeiros com valores das reservas, busca/filtros, exportação CSV, fotos, seleção de números, reserva, Pix por chave e WhatsApp.
+- Paginação de leitura em lotes de 500 e grade de 60 por página; testado com 1.300 números. A reserva continua transacional no servidor e a confirmação/cancelamento usa o gatilho existente; não houve alteração no esquema nem nas campanhas reais.
+- Criação inicia como rascunho, insere os números em uma única operação, confere a quantidade e só então publica. Falhas permitem retomar com Salvar. Editor usa o fuso de Brasília.
+- Manifesto, ícones e service worker adicionados. O cache guarda só o HTML estático; dados, sessões e chamadas ao Supabase não são armazenados pelo service worker. Conexão é necessária para operações reais.
+- Pix permanece manual; sem expiração automática de reservas ou promessa de cobrança automática. Não reutilizar o prazo fictício de 15 minutos da prévia no aplicativo real.
+- Testes de navegador com SDK simulado foram adicionados em `tests/`; também foi validada a leitura da campanha pública existente com os números reais, sem criar reservas.
